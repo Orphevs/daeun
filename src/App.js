@@ -7,7 +7,7 @@ function App() {
     <div>
       <h1>Hello, World!!</h1>
       <img
-        src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v1710000000/cat.jpg"
+        src="https://res.cloudinary.com/dgg7bpdyr/image/upload/v1745255072/cat-5628953_1920_nqcuib.jpg"
         alt="dgg7bpdyr"
         style={{ maxWidth: '300px', marginTop: '20px' }}
       />
