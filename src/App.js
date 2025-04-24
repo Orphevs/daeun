@@ -5,6 +5,7 @@ import { supabase } from './supabaseClient';
 
 function App() {
   const [animals, setAnimals] = useState([]);
+  const [showVideo, setShowVideo] = useState(false); // ✅ 유튜브 토글 상태 추가
   
   async function fetchByType(type) {
     const { data, error } = await supabase
@@ -42,6 +43,27 @@ function App() {
         </ul>
       ) : (
         <p>아직 선택된 종이 없습니다.</p>
+      )}
+
+      <hr style={{ margin: '30px 0' }} />
+
+      {/* ✅ 유튜브 버튼 추가 */}
+      <button onClick={() => setShowVideo(true)}>유튜브 보기</button>
+
+      {/* ✅ 유튜브 영상 표시 조건 */}
+      {showVideo && (
+        <div style={{ marginTop: '20px' }}>
+          <h3>유튜브 영상</h3>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pDpKEKNwz2Y?si=byLj5EwJ2PQCLyZP"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       )}
     </div>
   );
